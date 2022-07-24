@@ -1,0 +1,16 @@
+Program Giuaky; (* Factorial *)
+   
+Var n : Integer;
+    c : char;
+
+Begin
+    n := readI;
+    while n > 10 do n := readI;
+    while n < 0 do n := readI;
+    if n >= 9 then c := 'A' else
+    if n >= 7 then c := 'B' else
+    if n >= 5 then c := 'C' else
+    if n >= 4 then c := 'D' else c := 'F';
+    call WriteC(c);
+    call WriteLn;
+End. (* Factorial *)
