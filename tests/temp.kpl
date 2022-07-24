@@ -1,0 +1,11 @@
+Program Example2; (* Factorial *)
+   
+Var n : Integer;
+    s : Integer;
+
+Begin
+    n := readI;
+    s := 0;
+    n := n + (n**4);
+    call writeI(n);
+End. (* Factorial *)

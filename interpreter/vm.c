@@ -7,6 +7,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 //#include <conio.h>
+#include <math.h>
+
 
 #include "vm.h"
 
@@ -199,7 +201,12 @@ int run(void) {
       if (checkStack()) 
 	stack[t] *= stack[t+1];
       break;
-
+    case OP_PW:
+      t --;
+      if(checkStack()) {
+        stack[t] = pow(stack[t], stack[t+1]);
+      }
+      break;
     case OP_DV: 
       t --;
       if (checkStack()) {

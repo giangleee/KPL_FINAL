@@ -594,6 +594,7 @@ void compileArguments(ObjectNode* paramList) {
     // Check FOLLOW set 
   case SB_TIMES:
   case SB_SLASH:
+  case SB_POWER:
   case SB_PLUS:
   case SB_MINUS:
   case KW_TO:
@@ -770,6 +771,18 @@ Type* compileTerm2(Type* argType1) {
   Type* resultType;
 
   switch (lookAhead->tokenType) {
+  case SB_POWER: 
+    eat(SB_POWER);
+
+    checkIntType(argType1);
+    argType2 = compileFactor();
+    checkIntType(argType2);
+
+    genPW();
+
+    resultType = compileTerm2(argType1);
+
+    break;
   case SB_TIMES:
     eat(SB_TIMES);
     checkIntType(argType1);
