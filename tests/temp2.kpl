@@ -1,0 +1,16 @@
+Program Example2; (* Factorial *)
+   
+Var n : Integer;
+    s : Integer;
+
+Begin
+    n := readI;
+    repeat 
+        Begin
+            n := n + 1;
+            n := n*2;
+        end
+    until n < 10;
+
+    call writeI(n);
+End. (* Factorial *)
